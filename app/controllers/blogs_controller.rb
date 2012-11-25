@@ -2,7 +2,9 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.all.sort do |a, b|
+      b.created_at <=> a.created_at
+    end
 
     respond_to do |format|
       format.html # index.html.erb

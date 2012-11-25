@@ -1,7 +1,10 @@
 <h1>Listing blogs</h1>
 
-<table>
+<table border=1>
   <tr>
+    <th>date</th>
+    <th>title</th>
+    <th>body</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +12,9 @@
 
 <% @blogs.each do |blog| %>
   <tr>
+    <td><%= blog.post_date %></td>
+    <td><%= blog.title %></td>
+    <td><%= blog.body_abbr %></td>
     <td><%= link_to 'Show', blog %></td>
     <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
     <td><%= link_to 'Destroy', blog, confirm: 'Are you sure?', method: :delete %></td>

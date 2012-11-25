@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h2><%= @blog.title %></h2>
+<textarea rows=20 cols=40><%= @blog.body %></textarea>
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
